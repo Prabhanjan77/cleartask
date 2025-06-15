@@ -1,5 +1,7 @@
-package model;
+package com.cleartask.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -28,5 +30,6 @@ public class User {
 
     // orphanRemoval -> Removes from DB	and no need to call again a delete like taskRepository.delete()
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Task> tasks;
 }

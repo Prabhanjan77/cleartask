@@ -1,10 +1,10 @@
-package repository;
+package com.cleartask.api.repository;
 
-import model.Task;
+import com.cleartask.api.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;
-import model.User;
+import com.cleartask.api.model.User;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
